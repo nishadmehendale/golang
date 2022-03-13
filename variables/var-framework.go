@@ -19,6 +19,8 @@ var (
 )
 
 func main() {
+	// Local Variables scope is only limited to the function it is declared within
+	courseComplete := false
 	fmt.Println("Name and Course Set to ", name, "and", course, ".")
 	fmt.Println("Module and Clip Set to ", module, "and", clip, ".")
 	fmt.Println("Name is of type", reflect.TypeOf(name))
@@ -29,4 +31,5 @@ func main() {
 		total := iModule + clip
 		fmt.Println("Total of Module and Clip", total)
 	}
+	fmt.Println("Is Course Complete?", courseComplete)
 }
