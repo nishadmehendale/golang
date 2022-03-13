@@ -32,6 +32,11 @@ func main() {
 		fmt.Println("Total of Module and Clip", total)
 	}
 	fmt.Println("Is Course Complete?", courseComplete)
-	//Printing Memeory address using '&'
+	// Printing Memeory address using '&'
 	fmt.Println("Memory Address of Course Variable", &course)
+
+	// When creating a variable with '*' makes it a pointer variable
+	// When accessing the pointer variable with '*' dereferences it and returns actual value
+	var ptr *string = &module
+	fmt.Println("Pointing Module Variable At Address,", ptr, "which holds the value,", *ptr)
 }
