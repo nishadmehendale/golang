@@ -32,4 +32,6 @@ func main() {
 		fmt.Println("Total of Module and Clip", total)
 	}
 	fmt.Println("Is Course Complete?", courseComplete)
+	//Printing Memeory address using '&'
+	fmt.Println("Memory Address of Course Variable", &course)
 }
