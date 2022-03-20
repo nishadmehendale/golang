@@ -21,6 +21,7 @@ var (
 func main() {
 	// Local Variables scope is only limited to the function it is declared within
 	courseComplete := false
+	feedback := "Awesome"
 	fmt.Println("Name and Course Set to ", name, "and", course, ".")
 	fmt.Println("Module and Clip Set to ", module, "and", clip, ".")
 	fmt.Println("Name is of type", reflect.TypeOf(name))
@@ -39,4 +40,24 @@ func main() {
 	// When accessing the pointer variable with '*' dereferences it and returns actual value
 	var ptr *string = &module
 	fmt.Println("Pointing Module Variable At Address,", ptr, "which holds the value,", *ptr)
+
+	fmt.Println("Feedback is", feedback)
+	// this is a pass by value function it doesnt update the original clip variables value
+	updateFeedback(feedback)
+	fmt.Println("Updated Feedback post pass by Value", feedback)
+	updateFeedbackReally(&feedback)
+	fmt.Println("Updated Feedback post pass by Value", feedback)
+
+}
+
+func updateFeedback(feedback string) string {
+	feedback = "Amazing"
+	fmt.Println("Updating feedback to ", feedback, " but not really")
+	return feedback
+}
+
+func updateFeedbackReally(feedback *string) string {
+	*feedback = "Amazing"
+	fmt.Println("Updating feedback to ", *feedback, " really")
+	return *feedback
 }
