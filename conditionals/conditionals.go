@@ -30,8 +30,10 @@ func main() {
 		fmt.Println("MatchFound for Istio")
 	case "Kubernetes":
 		fmt.Println("MatchFound for Kubernetes")
+		// Uncomment below line to execute next individual case
+		// fallthrough
 	default:
-		fmt.Println("Match Found")
+		fmt.Println("Match Not Found")
 	}
 
 }
