@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 )
 
@@ -46,6 +47,13 @@ func main() {
 		fmt.Println("We got an even number", tmpNum)
 	default:
 		fmt.Println("We did not get a number", tmpNum)
+	}
+
+	// Using if for error handling
+	_, err := os.Open("./test.txt")
+
+	if err != nil {
+		fmt.Println("Error occurred ", err)
 	}
 
 }
